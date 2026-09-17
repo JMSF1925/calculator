@@ -1,3 +1,7 @@
+let firstNumber;
+let secNumber;
+let operator;
+
 function add(...values)
 {
     let total = values.reduce((sum, current) => sum + current, 0);
