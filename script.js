@@ -29,3 +29,23 @@ function divide(firstValue, ...values)
 
     return total;
 }
+
+function operate(firstNum, operator, secNum)
+{
+    if(operator === "+")
+    {
+        return add(firstNum, secNum);
+    }
+    else if(operator === "-")
+    {
+        return subtract(firstNum, secNum);
+    }
+    else if(operator === "*" || operator === "x" )
+    {
+        return multiply(firstNum, secNum);
+    }
+    else if(operator === "/")
+    {
+        return divide(firstNum, secNum);
+    }
+}
