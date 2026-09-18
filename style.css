@@ -6,4 +6,27 @@ div
 .column
 {
     flex-direction: column;
+    flex: 1;
+}
+
+.buttons
+{
+    height: 300px;
+    width: 250px;
+}
+
+button
+{
+    flex: 1;
+}
+
+input
+{
+    width: 244px;
+    height: 50px;
+}
+
+body
+{
+    background-color: black;
 }
