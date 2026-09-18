@@ -18,12 +18,37 @@ div
 button
 {
     flex: 1;
+    border-radius: 50%;
+    border-color: black;
+    border-style: solid;
 }
 
 input
 {
     width: 244px;
     height: 50px;
+    color: white;
+    background-color: black;
+    border-style: none;
+    margin-left: 10px;
+}
+
+.special
+{
+    color: white;
+    background-color: #7D7C7C;
+}
+
+.normal
+{
+    color: white;
+    background-color: #474747;
+}
+
+.operator
+{
+    color: white;
+    background-color: orange;
 }
 
 body
