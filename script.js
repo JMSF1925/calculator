@@ -2,6 +2,14 @@ let firstNumber;
 let secNumber;
 let operator;
 
+const digits = document.querySelectorAll(".normal");
+
+digits.forEach((digit) => {
+    digit.addEventListener("click", () => {
+        console.log(digit.textContent);
+    });
+});
+
 function add(...values)
 {
     let total = values.reduce((sum, current) => sum + current, 0);
