@@ -3,6 +3,11 @@ div
     display: flex;
 }
 
+.calculator
+{
+    flex-direction: column;
+}
+
 .column
 {
     flex-direction: column;
@@ -18,19 +23,18 @@ div
 button
 {
     flex: 1;
-    border-radius: 50%;
-    border-color: black;
-    border-style: solid;
 }
 
 input
 {
-    width: 240px;
+    width: 246px;
     height: 50px;
     color: white;
     background-color: black;
     border-style: none;
     text-align: right;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .special
@@ -51,7 +55,7 @@ input
     background-color: orange;
 }
 
-body
+/*body
 {
     background-color: black;
-}
+}*/
