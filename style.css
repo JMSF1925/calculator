@@ -23,6 +23,7 @@ div
 button
 {
     flex: 1;
+    font-size: 20px;
 }
 
 input
@@ -35,6 +36,7 @@ input
     text-align: right;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    font-size: 40px;
 }
 
 .special
@@ -53,6 +55,17 @@ input
 {
     color: white;
     background-color: orange;
+    font-size: 30px;
+}
+
+#change
+{
+    border-bottom-left-radius: 10px;
+}
+
+#equal
+{
+    border-bottom-right-radius: 10px;
 }
 
 /*body
