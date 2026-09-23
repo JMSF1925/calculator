@@ -39,7 +39,19 @@ input
     font-size: 40px;
 }
 
-.special
+.delete
+{
+    color: white;
+    background-color: #7D7C7C;
+}
+
+.percentage
+{
+    color: white;
+    background-color: #7D7C7C;
+}
+
+.clean
 {
     color: white;
     background-color: #7D7C7C;
