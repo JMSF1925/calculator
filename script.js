@@ -3,10 +3,20 @@ let secNumber;
 let operator;
 
 const digits = document.querySelectorAll(".normal");
+const display = document.querySelector("input");
 
 digits.forEach((digit) => {
     digit.addEventListener("click", () => {
-        console.log(digit.textContent);
+        if(display.value === "0")
+        {
+            display.value = digit.textContent;
+            firstNumber = digit.textContent;
+        }
+        else
+        {
+            display.value += digit.textContent;
+            firstNumber += digit.textContent;
+        }
     });
 });
 
