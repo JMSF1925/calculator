@@ -4,6 +4,7 @@ let operator;
 
 const digits = document.querySelectorAll(".normal");
 const display = document.querySelector("input");
+const comma = document.querySelector(".comma");
 
 digits.forEach((digit) => {
     digit.addEventListener("click", () => {
@@ -18,6 +19,13 @@ digits.forEach((digit) => {
             firstNumber += digit.textContent;
         }
     });
+});
+
+comma.addEventListener("click", () => {
+    if(!display.value.includes("."))
+    {
+        display.value += comma.textContent;
+    }
 });
 
 function add(...values)
