@@ -5,6 +5,7 @@ let operator;
 const digits = document.querySelectorAll(".normal");
 const display = document.querySelector("input");
 const comma = document.querySelector(".comma");
+const deleteDigit = document.querySelector(".delete");
 
 digits.forEach((digit) => {
     digit.addEventListener("click", () => {
@@ -27,6 +28,18 @@ comma.addEventListener("click", () => {
         display.value += comma.textContent;
     }
 });
+
+deleteDigit.addEventListener("click", () => {
+    if(display.value.length === 1)
+    {
+        display.value = "0";
+    }
+    else
+    {
+        let tempString = display.value.slice(0, -1);
+        display.value = tempString;
+    }
+})
 
 function add(...values)
 {
