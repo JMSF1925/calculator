@@ -61,6 +61,8 @@ input
 #change
 {
     border-bottom-left-radius: 10px;
+    color: white;
+    background-color: #474747;
 }
 
 #equal
@@ -68,7 +70,8 @@ input
     border-bottom-right-radius: 10px;
 }
 
-/*body
+.comma
 {
-    background-color: black;
-}*/
+    color: white;
+    background-color: #474747;
+}
