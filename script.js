@@ -6,6 +6,7 @@ const digits = document.querySelectorAll(".normal");
 const display = document.querySelector("input");
 const comma = document.querySelector(".comma");
 const deleteDigit = document.querySelector(".delete");
+const clear = document.querySelector(".clean");
 
 digits.forEach((digit) => {
     digit.addEventListener("click", () => {
@@ -13,11 +14,13 @@ digits.forEach((digit) => {
         {
             display.value = digit.textContent;
             firstNumber = digit.textContent;
+            clear.textContent = "C";
         }
         else
         {
             display.value += digit.textContent;
             firstNumber += digit.textContent;
+            clear.textContent = "C";
         }
     });
 });
@@ -26,6 +29,7 @@ comma.addEventListener("click", () => {
     if(!display.value.includes("."))
     {
         display.value += comma.textContent;
+        clear.textContent = "C";
     }
 });
 
@@ -33,13 +37,22 @@ deleteDigit.addEventListener("click", () => {
     if(display.value.length === 1)
     {
         display.value = "0";
+        clear.textContent = "AC";
     }
     else
     {
         let tempString = display.value.slice(0, -1);
         display.value = tempString;
     }
-})
+});
+
+clear.addEventListener("click", () => {
+    if(display.value !== "0")
+    {
+        display.value = "0";
+        clear.textContent = "AC";
+    }
+});
 
 function add(...values)
 {
