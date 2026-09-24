@@ -7,6 +7,7 @@ const display = document.querySelector("input");
 const comma = document.querySelector(".comma");
 const deleteDigit = document.querySelector(".delete");
 const clear = document.querySelector(".clean");
+const percentage = document.querySelector(".percentage");
 
 digits.forEach((digit) => {
     digit.addEventListener("click", () => {
@@ -53,6 +54,14 @@ clear.addEventListener("click", () => {
         clear.textContent = "AC";
     }
 });
+
+percentage.addEventListener("click", () => {
+    if(!display.value.includes("%"))
+    {
+        display.value += percentage.textContent;
+        clear.textContent = "C";
+    }
+})
 
 function add(...values)
 {
