@@ -11,7 +11,11 @@ const percentage = document.querySelector(".percentage");
 
 digits.forEach((digit) => {
     digit.addEventListener("click", () => {
-        if(display.value === "0")
+        if(display.value === "0" && digit.textContent === "0")
+        {
+            clear.textContent = "AC";
+        }
+        else if(display.value === "0")
         {
             display.value = digit.textContent;
             firstNumber = digit.textContent;
