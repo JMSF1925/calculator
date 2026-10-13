@@ -8,6 +8,7 @@ const comma = document.querySelector(".comma");
 const deleteDigit = document.querySelector(".delete");
 const clear = document.querySelector(".clean");
 const percentage = document.querySelector(".percentage");
+const changeSignal = document.querySelector("#change");
 
 digits.forEach((digit) => {
     digit.addEventListener("click", () => {
@@ -64,6 +65,18 @@ percentage.addEventListener("click", () => {
     {
         display.value += percentage.textContent;
         clear.textContent = "C";
+    }
+})
+
+changeSignal.addEventListener("click", () => {
+    if(display.value != "0" && display.value.charAt(0) != "-")
+    {
+        display.value = "-" + display.value;
+    }
+    else if(display.value != "0" && display.value.charAt(0) == "-")
+    {
+        let tempDisplay = display.value.slice(1);
+        display.value = tempDisplay;
     }
 })
 
