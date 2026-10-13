@@ -70,7 +70,7 @@ clear.addEventListener("click", () => {
     }
 });
 
-percentage.addEventListener("click", () => {
+/*percentage.addEventListener("click", () => {
     if(!display.value.includes("%"))
     {
         display.value += percentage.textContent;
@@ -78,9 +78,9 @@ percentage.addEventListener("click", () => {
         console.log(firstNumber);
         clear.textContent = "C";
     }
-})
+})*/
 
-changeSignal.addEventListener("click", () => {
+/*changeSignal.addEventListener("click", () => {
     if(display.value != "0" && display.value.charAt(0) != "-")
     {
         display.value = "-" + display.value;
@@ -94,7 +94,7 @@ changeSignal.addEventListener("click", () => {
         firstNumber = display.value;
         console.log(firstNumber);
     }
-})
+})*/
 
 function add(...values)
 {
