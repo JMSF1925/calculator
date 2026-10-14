@@ -9,6 +9,8 @@ const deleteDigit = document.querySelector(".delete");
 const clear = document.querySelector(".clean");
 const percentage = document.querySelector(".percentage");
 const changeSignal = document.querySelector("#change");
+const operators = document.querySelectorAll(".operator");
+const equal = document.querySelector("#equal");
 
 console.log(firstNumber);
 
@@ -71,6 +73,34 @@ clear.addEventListener("click", () => {
         clear.textContent = "AC";
     }
 });
+
+//Logic of the operations
+
+operators.forEach((operation) => {
+    operation.addEventListener("click", () => {
+        if(secNumber === undefined)
+        {
+            digits.forEach((digit) => {
+                digit.addEventListener("click", () => {
+                    if(display.value === "0")
+                    {
+                        display.value = digit.textContent;
+                        firstNumber = Number(display.value);
+                        console.log(firstNumber);
+                        clear.textContent = "C";
+                    }
+                    else
+                    {
+                        display.value += digit.textContent;
+                        firstNumber = Number(display.value);
+                        console.log(firstNumber);
+                        clear.textContent = "C";
+                    }
+                })
+            })
+        }
+    })
+})
 
 /*percentage.addEventListener("click", () => {
     if(!display.value.includes("%"))
