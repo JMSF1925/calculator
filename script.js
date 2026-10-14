@@ -1,4 +1,4 @@
-let firstNumber;
+let firstNumber = 0;
 let secNumber;
 let operator;
 
@@ -10,6 +10,8 @@ const clear = document.querySelector(".clean");
 const percentage = document.querySelector(".percentage");
 const changeSignal = document.querySelector("#change");
 
+console.log(firstNumber);
+
 digits.forEach((digit) => {
     digit.addEventListener("click", () => {
         if(display.value === "0" && digit.textContent === "0")
@@ -19,14 +21,14 @@ digits.forEach((digit) => {
         else if(display.value === "0")
         {
             display.value = digit.textContent;
-            firstNumber = display.value;
+            firstNumber = Number(display.value);
             console.log(firstNumber);
             clear.textContent = "C";
         }
         else
         {
             display.value += digit.textContent;
-            firstNumber = display.value;
+            firstNumber = Number(display.value);
             console.log(firstNumber);
             clear.textContent = "C";
         }
@@ -37,7 +39,7 @@ comma.addEventListener("click", () => {
     if(!display.value.includes("."))
     {
         display.value += comma.textContent;
-        firstNumber = display.value;
+        firstNumber = Number(display.value);
         console.log(firstNumber);
         clear.textContent = "C";
     }
@@ -47,7 +49,7 @@ deleteDigit.addEventListener("click", () => {
     if(display.value.length === 1)
     {
         display.value = "0";
-        firstNumber = display.value;
+        firstNumber = Number(display.value);
         console.log(firstNumber);
         clear.textContent = "AC";
     }
@@ -55,7 +57,7 @@ deleteDigit.addEventListener("click", () => {
     {
         let tempString = display.value.slice(0, -1);
         display.value = tempString;
-        firstNumber = display.value;
+        firstNumber = Number(display.value);
         console.log(firstNumber);
     }
 });
@@ -64,7 +66,7 @@ clear.addEventListener("click", () => {
     if(display.value !== "0")
     {
         display.value = "0";
-        firstNumber = display.value;
+        firstNumber = Number(display.value);
         console.log(firstNumber);
         clear.textContent = "AC";
     }
