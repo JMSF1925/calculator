@@ -77,28 +77,33 @@ clear.addEventListener("click", () => {
 //Logic of the operations
 
 operators.forEach((operation) => {
+
     operation.addEventListener("click", () => {
-        if(secNumber === undefined)
-        {
-            digits.forEach((digit) => {
-                digit.addEventListener("click", () => {
-                    if(display.value === "0")
-                    {
-                        display.value = digit.textContent;
-                        firstNumber = Number(display.value);
-                        console.log(firstNumber);
-                        clear.textContent = "C";
-                    }
-                    else
-                    {
-                        display.value += digit.textContent;
-                        firstNumber = Number(display.value);
-                        console.log(firstNumber);
-                        clear.textContent = "C";
-                    }
-                })
+
+        secNumber = firstNumber;
+        firstNumber = 0;
+        console.log(firstNumber);
+
+        digits.forEach((digit) => {
+            digit.addEventListener("click", () => {
+                if(firstNumber === 0)
+                {
+                    display.value = digit.textContent;
+                    firstNumber = Number(display.value);
+                    console.log(firstNumber);
+                    clear.textContent = "C";
+                    console.log(`Segundo número: ${secNumber}`);
+                }
+                else
+                {
+                    display.value += digit.textContent;
+                    firstNumber = Number(display.value);
+                    console.log(firstNumber);
+                    clear.textContent = "C";
+                    console.log(`Segundo número: ${secNumber}`);
+                }
             })
-        }
+        })
     })
 })
 
