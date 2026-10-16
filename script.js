@@ -16,11 +16,7 @@ console.log(firstNumber);
 
 digits.forEach((digit) => {
     digit.addEventListener("click", () => {
-        if(display.value === "0" && digit.textContent === "0")
-        {
-            clear.textContent = "AC";
-        }
-        else if(display.value === "0")
+        if(display.value === "0" || firstNumber === undefined)
         {
             display.value = digit.textContent;
             firstNumber = Number(display.value);
@@ -80,30 +76,23 @@ operators.forEach((operation) => {
 
     operation.addEventListener("click", () => {
 
-        secNumber = firstNumber;
-        firstNumber = 0;
-        console.log(firstNumber);
+        if(secNumber === undefined)
+        {
+            secNumber = firstNumber;
+            firstNumber = undefined;
+            console.log(firstNumber);
+            console.log(`Segundo número ${secNumber}`);
+        }
+        else
+        {
+            tempNumber = operate(secNumber, operation.textContent, firstNumber);
+            display.value = tempNumber.toString();
+            secNumber = tempNumber;
+            firstNumber = undefined;
+            console.log(firstNumber);
+            console.log(`Segundo número ${secNumber}`);
+        }
 
-        digits.forEach((digit) => {
-            digit.addEventListener("click", () => {
-                if(firstNumber === 0)
-                {
-                    display.value = digit.textContent;
-                    firstNumber = Number(display.value);
-                    console.log(firstNumber);
-                    clear.textContent = "C";
-                    console.log(`Segundo número: ${secNumber}`);
-                }
-                else
-                {
-                    display.value += digit.textContent;
-                    firstNumber = Number(display.value);
-                    console.log(firstNumber);
-                    clear.textContent = "C";
-                    console.log(`Segundo número: ${secNumber}`);
-                }
-            })
-        })
     })
 })
 
