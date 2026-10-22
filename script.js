@@ -77,23 +77,6 @@ operators.forEach((operation) => {
 
     operation.addEventListener("click", () => {
 
-        /*if(secNumber === undefined)
-        {
-            secNumber = firstNumber;
-            firstNumber = undefined;
-            console.log(firstNumber);
-            console.log(`Segundo número ${secNumber}`);
-        }
-        else
-        {
-            tempNumber = operate(secNumber, operation.textContent, firstNumber);
-            display.value = tempNumber.toString();
-            secNumber = tempNumber;
-            firstNumber = undefined;
-            console.log(firstNumber);
-            console.log(`Segundo número ${secNumber}`);
-        }*/
-
         if(operatorAuxilar === undefined)
         {
             operatorAuxilar = operation.textContent;
@@ -112,7 +95,6 @@ operators.forEach((operation) => {
             console.log(`Segundo número ${secNumber}`);
             operatorAuxilar = operation.textContent;
         }
-
     })
 })
 
