@@ -80,7 +80,7 @@ operators.forEach((operation) => {
         if(operatorAuxilar === undefined)
         {
             operatorAuxilar = operation.textContent;
-            secNumber = firstNumber;
+            secNumber = Number(display.value);
             firstNumber = undefined;
             console.log(firstNumber);
             console.log(`Segundo número ${secNumber}`);
@@ -97,6 +97,21 @@ operators.forEach((operation) => {
         }
     })
 })
+
+//Logic for equal
+
+equal.addEventListener("click", () => {
+    if(operatorAuxilar !== undefined)
+    {
+        tempNumber = operate(secNumber, operatorAuxilar, firstNumber);
+        display.value = tempNumber.toString();
+        secNumber = tempNumber;
+        firstNumber = undefined;
+        console.log(firstNumber);
+        console.log(`Segundo número ${secNumber}`);
+        operatorAuxilar = undefined;
+    }
+});
 
 /*percentage.addEventListener("click", () => {
     if(!display.value.includes("%"))
